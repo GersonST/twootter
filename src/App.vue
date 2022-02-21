@@ -1,7 +1,5 @@
 <template>
-  <div id="app">
-    {{ user.username }}
-  </div>
+  <div id="app">{{ user.username }} - {{ fullName }}</div>
 </template>
 
 <script>
@@ -12,13 +10,18 @@ export default {
       followers: 0,
       user: {
         id: 1,
-        username: "GersonSevero",
+        username: "FoxLegion",
         firstName: "Gerson",
         lastName: "Severo",
         email: "gersonsevero90@gmail.com",
         isAdmin: true,
       },
     };
+  },
+  computed: {
+    fullName() {
+      return `${this.user.firstName} ${this.user.lastName}`;
+    },
   },
 };
 </script>

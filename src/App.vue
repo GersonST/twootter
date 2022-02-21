@@ -18,7 +18,6 @@ export default {
         email: "gersonsevero90@gmail.com",
         isAdmin: true,
       },
-      mounted() {},
     };
   },
   computed: {
@@ -30,6 +29,9 @@ export default {
     followUser() {
       this.followers++;
     },
+  },
+  mounted() {
+    this.followUser();
   },
 };
 </script>

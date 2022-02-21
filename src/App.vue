@@ -18,6 +18,7 @@ export default {
         email: "gersonsevero90@gmail.com",
         isAdmin: true,
       },
+      mounted() {},
     };
   },
   computed: {

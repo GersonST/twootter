@@ -7,7 +7,15 @@
         <strong>Followers: </strong> {{ followers }}
       </div>
     </div>
-    <div class="user-profile_twoots-wrapper"></div>
+    <div class="user-profile_twoots-wrapper">
+      <div
+        class="user-profile_twoot"
+        v-for="twoot in user.twoots"
+        :key="twoot.id"
+      >
+        {{ twoot.content }}
+      </div>
+    </div>
   </div>
 </template>
 

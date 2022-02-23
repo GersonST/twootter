@@ -1,5 +1,12 @@
 <template>
-  <div></div>
+  <div class="twoot-item">
+    <div class="user-profile_twoot">
+      <div class="twoot-item_user">@{{ username }}</div>
+      <div class="twoot-item_content">
+        {{ twoot.content }}
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>

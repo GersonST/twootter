@@ -8,20 +8,24 @@
       </div>
     </div>
     <div class="user-profile_twoots-wrapper">
-      <div
-        class="user-profile_twoot"
+      <TwootItem
         v-for="twoot in user.twoots"
         :key="twoot.id"
+        :username="user.username"
+        :twoot="twoot"
       >
         {{ twoot.content }}
-      </div>
+      </TwootItem>
     </div>
   </div>
 </template>
 
 <script>
+import TwootItem from "./TwootItem";
+
 export default {
   name: "UserProfile",
+  components: { TwootItem },
   data() {
     return {
       followers: 0,
@@ -91,5 +95,10 @@ export default {
 
 h1 {
   margin: 0;
+}
+
+.user-profile_twoots-wrapper {
+  display: grid;
+  grid-gap: 10px;
 }
 </style>

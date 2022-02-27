@@ -6,6 +6,10 @@
       <div class="user-profile_follower-counts">
         <strong>Followers: </strong> {{ followers }}
       </div>
+      <form class="user-profile_create-twoot">
+        <label for="newTwoot"><strong>New Twoot</strong></label>
+        <textarea id="newTwoot" rows="4" />
+      </form>
     </div>
     <div class="user-profile_twoots-wrapper">
       <TwootItem
@@ -104,5 +108,12 @@ h1 {
 .user-profile_twoots-wrapper {
   display: grid;
   grid-gap: 10px;
+}
+
+.user-profile_create-twoot {
+  border-top: 1px solid #dfe3e8;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
 }
 </style>

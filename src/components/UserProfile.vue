@@ -9,6 +9,17 @@
       <form class="user-profile_create-twoot">
         <label for="newTwoot"><strong>New Twoot</strong></label>
         <textarea id="newTwoot" rows="4" />
+
+        <div class="user-profile_create-twoot-type">
+          <label for="newTwootType"><strong>Type: </strong></label>
+          <select id="newTwootType">
+            <option
+              :value="option.value"
+              v-for="(option, index) in twootTypes"
+              :key="index"
+            />
+          </select>
+        </div>
       </form>
     </div>
     <div class="user-profile_twoots-wrapper">
@@ -33,6 +44,10 @@ export default {
   components: { TwootItem },
   data() {
     return {
+      twootTypes: [
+        { value: "draft", name: "Draft" },
+        { value: "instant", name: "Instant Twoot" },
+      ],
       followers: 0,
       user: {
         id: 1,
@@ -111,7 +126,6 @@ h1 {
 }
 
 .user-profile_create-twoot {
-  border-top: 1px solid #dfe3e8;
   padding-top: 20px;
   display: flex;
   flex-direction: column;

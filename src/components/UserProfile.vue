@@ -12,7 +12,7 @@
 
         <div class="user-profile_create-twoot-type">
           <label for="newTwootType"><strong>Type: </strong></label>
-          <select id="newTwootType">
+          <select id="newTwootType" v-model="selectedTwootType">
             <option
               :value="option.value"
               v-for="(option, index) in twootTypes"

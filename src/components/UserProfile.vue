@@ -8,7 +8,7 @@
       </div>
       <form class="user-profile_create-twoot">
         <label for="newTwoot"><strong>New Twoot</strong></label>
-        <textarea id="newTwoot" rows="4" />
+        <textarea id="newTwoot" rows="4" v-model="newTwootContent" />
 
         <div class="user-profile_create-twoot-type">
           <label for="newTwootType"><strong>Type: </strong></label>
@@ -17,7 +17,9 @@
               :value="option.value"
               v-for="(option, index) in twootTypes"
               :key="index"
-            />
+            >
+              {{ option.name }}
+            </option>
           </select>
         </div>
       </form>
@@ -44,6 +46,8 @@ export default {
   components: { TwootItem },
   data() {
     return {
+      newTwootContent: "",
+      selectedTwootType: "instant",
       twootTypes: [
         { value: "draft", name: "Draft" },
         { value: "instant", name: "Instant Twoot" },
